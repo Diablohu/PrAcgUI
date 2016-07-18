@@ -1,0 +1,41 @@
+.action{
+    position:   relative;
+    display:    inline-block;
+
+    &[disabled]{
+        cursor:     default;
+        &:hover{
+            text-decoration: none;
+        }
+        &:after{
+            content:    "";
+            position:   absolute;
+            left:       0;
+            bottom:     0;
+            width:      33.3333%;
+            height:     2px;
+            //background: #000;
+            .theme(background-color, 100);
+            animation: 	button-progress 1.2s linear infinite alternate;
+        }
+    }
+    
+    &.action-plus-on{
+        &:after{
+            content:    "+1s";
+            position:   absolute;
+            left:       auto;
+            right:      0;
+            top:        -.25em;
+            opacity:    0;
+            width:      auto;
+            height:     auto;
+            bottom:     auto;
+            background-color: transparent !important;
+            .theme(color, 500);
+            animation: 	fadeOutUp .5s ease-out;
+            pinter-events: none;
+            user-select: none;
+        }
+    }
+}

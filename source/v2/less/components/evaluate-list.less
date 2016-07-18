@@ -1,0 +1,74 @@
+/*评分列表*/
+.evaluate-list {
+    .evaluate-list-title {
+        color: #ccc;
+        a {
+            font-size: .8em;
+            .theme(color,900);
+        }
+        a.user-on {
+            color: #333;
+            text-decoration: none;
+
+        }
+    }
+    .button-tiny {
+        display: table;
+        margin: 0 auto;
+    }
+   .evaluate-list-cont {
+       display: none;
+       dl {
+           position: relative;
+       }
+       dt {
+           float: left;
+           width: 36px;
+           height: 36px;
+           overflow: hidden;
+           img {
+               width: 100%;
+               height: 100%;
+               border-radius: 5px;
+           }
+       }
+       dd {
+           line-height: 14px;
+           h5 {
+               margin-bottom: 5px;
+               font-weight: normal;
+               .theme(color,900);
+               font-size: .8em;
+               span {
+                   color: #ccc;
+                   margin-left: 10px;
+                   font-size: .6em;
+
+               }
+           }
+           p {
+               font-size: .8em;
+               color: #808080;
+               margin-top: 0px;
+
+           }
+       }
+       .evaluate-list-desc {
+           border-right: 30px solid transparent;
+       }
+       .evaluate-list-num {
+           width: 32px;
+           height: 32px;
+           .theme(color,500);
+           border: 1px solid #dbdbdb;
+           background-color: #f7f7f7;
+           border-radius: 50%;
+           line-height: 32px;
+           text-align: center;
+           position: absolute;
+           top: 3px;
+           right: 0;
+       }
+
+   }
+}

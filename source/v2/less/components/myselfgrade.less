@@ -1,0 +1,191 @@
+@border:1px solid #dbdbdb;
+@colorWhite:#fff;
+.hline() {
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+form.u-form {
+   margin: 0;
+}
+.self-grade {
+    width: 300px;
+    overflow: hidden;
+    dl {
+        position: relative;
+    }
+
+    .self-grade-pic {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+    }
+    .self-grade-do-cont {
+        padding-left: 55px;
+
+        .self-grade-do {
+            letter-spacing: -5px;
+            margin-bottom: 4px;
+            a {
+                display: inline-block;
+                background-color: #fff;
+                border: @border;
+                color: #a6a6a6;
+                font-size: .8em;
+                width: 60px;
+                text-align: center;
+                height: 20px;
+                line-height: 20px;
+                border-right: none;
+                letter-spacing: 0;
+                background-color: @colorWhite;
+
+
+            }
+            a:last-child {
+                border-right: @border;
+                border-radius: 0 5px 5px 0;
+            }
+            a:first-child {
+                border-radius: 5px 0 0 5px;
+            }
+            a:last-child {
+                border-radius:  0 5px 5px 0;
+            }
+            a:hover {
+                text-decoration: none;
+            }
+            a.on {
+                .theme(border-color,200);
+                border: 1px solid #b0bec4;
+                .theme(color,500);
+                .theme(background,50);
+                position: relative;
+                right: -1px;
+
+            }
+
+
+        }
+        .user-grade-pf {
+
+
+            span {
+                float: left;
+                border: @border;
+                color: #a6a6a6;
+                border-radius: 5px 0 0 5px;
+                font-size: .6em;
+                width: 30px;
+                .hline;
+            }
+            .user-grade-cont {
+                position: relative;
+                background-color: #fff;
+                .user-drag-line {
+                    width: 4px;
+                    height: 26px;
+                    .theme(background-color,900);
+                    cursor: pointer;
+                    z-index: 3;
+                    top: -3px;
+                    left: 0;
+                    pointer-events: none;
+                    position: absolute;
+
+                }
+                .user-bg-color {
+                    position: absolute;
+                    z-index: 1;
+                    .theme(background-color,50);
+                    width: 0;
+                    height: 100%;
+                }
+
+
+                .darglist(@n,@i:1) when (@i =< @n) {
+                    .user-grade-pf-ipt[value='@{i}'] ~ .user-grade-list {
+                        .user-bg-color {
+                            width: percentage( (@i / 10) );
+                        }
+                        .user-drag-line {
+                            left:  percentage( (@i * 10 - 1) / 100 );
+                        }
+                    }
+                    a[data-val="@{i}"]:hover ~ .user-drag-line {
+                        left: percentage((@i*10-1) / 100) !important;
+                    }
+
+                    a[data-val="@{i}"]:hover ~ .user-bg-color {
+                        width: percentage(@i*10/100) !important;
+                    }
+                    .darglist(@n,(@i+1));
+
+                }
+                .darglist(10);
+
+
+                float: left;
+                width: 210px;
+                .user-grade-list {
+                    width: 100%;
+                    background-color: @colorWhite;
+
+
+                }
+                
+                a, a:hover{
+                    float: left;
+                    width: 10%;
+                    position: relative;
+                    z-index: 2;
+                    font-size: .8em;
+                    border:@border;
+                    border-left: none;
+                    border-left: none;
+                    .hline;
+                    text-decoration: none;
+
+                }
+                a:last-child {
+                    border-radius: 0 5px  5px 0;
+                }
+            }
+        }
+    }
+    dl,dd {
+        margin: 0;
+
+    }
+    .textarea-cont {
+        margin: 10px 0;
+    }
+    .user-grade-tarea {
+        width: 100%;
+        color: #333;
+        padding: 4px;
+
+        border: 1px solid #dbdbdb;
+        box-sizing: border-box;
+        background-color:  @colorWhite;
+        resize: none;
+    }
+    .textarea-cont {
+        position: relative;
+    }
+    .arrow {
+        position: absolute;
+        top: -7px;
+        left: 18px;
+
+    }
+}

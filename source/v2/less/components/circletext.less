@@ -1,0 +1,41 @@
+.circleimg {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+
+    .circleimg-img {
+        float: left;
+        margin-right: 5px;
+        //.theme(border-color,900);
+        border: 1px solid @base-color;
+        border-radius: 50%;
+        padding: 2px;
+        width: 88px;
+        height: 88px;
+        background-position: 50% 38.2%;
+        background-size: cover;
+        overflow: hidden;
+        img {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            vertical-align: middle;
+            display: none;
+        }
+    }
+    .circleimg-desc {
+        .theme(color,500);
+        font-size: 1.2em;
+        line-height: 38px;
+        display: table-cell;
+        height:100px;
+        vertical-align: middle;
+        sup,sub {
+            color: #a6a6a6;
+            display: block;
+            font-size: 0.6em;
+        }
+
+    }
+
+}

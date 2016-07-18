@@ -1,0 +1,35 @@
+
+.gallery{
+    position:   relative;
+    dl{
+        margin:     0;
+        padding:    0;
+    }
+    .picrow{
+        // 修正高分屏下的错位问题
+        margin-right:-100%;
+    }
+    .photo-container{
+        float:      left;
+        position:   relative;
+        overflow:   hidden;
+        background: #fff;
+    }
+    .image-thumb{
+        position:   relative;
+    }
+}
+
+.gallery-row{
+    position:   relative;
+    overflow:   hidden;
+    
+    a{
+        &:hover{
+            opacity:    .85;
+        }
+        &:active{
+            opacity:    .6;
+        }
+    }
+}

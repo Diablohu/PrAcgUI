@@ -1,0 +1,134 @@
+button[type="button"]{
+    cursor:     pointer;
+    &:focus{
+        outline:    transparent;
+    }
+}
+
+
+
+.button{
+    display:    inline-block;
+    border:     1px solid transparent;
+    line-height:1.2em;
+    padding:    .4em 1em;
+    padding:    ~"calc(.4em - 1px)" 1em;
+    background: transparent;
+    appearance: none;
+    cursor:     pointer;
+    text-align: center;
+    border-radius:  3px;
+    user-select:    none;
+    white-space:    nowrap;
+    //vertical-align: top;
+	.theme( color, 500 );
+	.theme( border-color, 500 );
+    .transition(all);
+    &:hover{
+        color:  #fff !important;
+        text-decoration: none;
+	    .theme( background-color, a700 );
+    }
+    &:active{
+        color:  #fff !important;
+	    //.theme( background-color, 200 );
+	    .theme( background-color, 900 );
+        box-shadow: inset 0 .35em .4em rgba(0, 0, 0, .25);
+    }
+    .mod-color-deep({
+        color:      #fff !important;
+        .theme(border-color, 50);
+        //background:     fade(@color-900, 50%);
+        &:hover{
+            .theme(background, 50);
+            .theme(color, 900) !important;
+            text-shadow:    none;
+        }
+        &:active{
+            .theme(background, 200);
+            .theme(color, 900) !important;
+            text-shadow:    none;
+        }
+    });
+}
+
+
+
+// 按钮尺寸
+.button-large{
+    font-size:  1.25em;
+}
+.button-small{
+    font-size:  .875em;
+}
+.button-tiny{
+    font-size:  .65em;
+}
+
+
+
+// 占满整行
+.button-full{
+    display:    block;
+    width:      100%;
+    &+.button{
+        margin-top:     .5rem;
+    }
+}
+
+//用户标签按钮
+.button-user {
+    .theme(background-color,100);
+    border-color: transparent;
+}
+
+// 按钮颜色
+.button-primary{
+	.theme( border-color, a700 );
+    .theme( background-color, a700 );
+    color:      #fff !important;
+    //text-shadow:0 0 1px rgba(0, 0, 0, .5);
+    &:hover{
+        .theme( background-color, 700 );
+    }
+    &:active{
+        .theme( background-color, 900 );
+    }
+}
+.button-disabled, .button[disabled]{
+    cursor:     default;
+    opacity:    .5;
+    &, &:hover, &:active{
+        .theme( background-color, 50 ) !important;
+        .theme( color, 600 ) !important;
+        .theme( border-color, 200 ) !important;
+    }
+}
+.button-link{
+	background: 	none;
+	border: 		0;
+	display: 		inline-block;
+    &:hover{
+		text-decoration:underline;
+		.theme( color, 900 ) !important;
+	    background: none !important;
+    }
+    &:active{
+		.theme( color, 200 ) !important;
+	    background: none !important;
+        box-shadow: none;
+    }
+}
+
+.arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    font-size: 0px;
+    line-height: 0px;
+}
+.arrow-up {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #dbdbdb;
+}

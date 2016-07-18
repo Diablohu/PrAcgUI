@@ -1,0 +1,138 @@
+#modal{
+    display:    none;
+    position:   fixed;
+    z-index:    @zIndex-modal;
+    width:      100%;
+    height:     100%;
+    left:       0;
+    top:        0;
+    background: hsl(0, 0%, 35%);
+    background: rgba(0, 0, 0, .65);
+    vertical-align:	middle;
+    text-align: center;
+    overflow:   auto;
+    
+    &:after{
+        content:		"";
+        display:		inline-block;
+        vertical-align:	middle;
+        width:			0;
+        height:			100%;
+        overflow:		hidden;
+    }
+    &>.body{
+        display:		inline-block;
+        background:     @base-background-color;
+        border-radius:  5px;
+        margin:         3em auto;
+        width:          75%;
+        max-width:      @screen-t2;
+        vertical-align: middle;
+        overflow:       hidden;
+        box-shadow:     0 1em 2em rgba(0,0,0,.5);
+        //animation:      scaleIn 1s ease-out, fadeIn 1s ease-out;
+        animation:      fadeIn .2s ease-out;
+    }
+    
+    .button-close{
+        @margin:        16px;
+        @size:          35px;
+        display:        block;
+        position:       fixed;
+        top:            @margin;
+        right:          @margin;
+        background:     none transparent;
+        width:          @size;
+        height:         @size;
+        border:         0;
+        color:          #fff;
+        border-radius:  50%;
+        z-index:        100;
+        &:before{
+            content:    "×";
+            font-size:  2em;
+            position:   absolute;
+            top:        50%;
+            line-height:0;
+            left:       0;
+            width:      100%;
+            text-align: center;
+        }
+        &:hover{
+            background: rgba(255,255,255,.25);
+        }
+        &:active{
+            background: rgba(255,255,255,.15);
+        }
+    }
+    
+    .loader-circle{
+        display:        none;
+    }
+    
+    iframe{
+        position:       relative;
+        border:         0;
+        width:          100%;
+        height:         auto;
+        margin:         0;
+        display:        block;
+        overflow:       hidden;
+        min-height:     10em;
+    }
+    
+    &.is-loading{
+        .loader-circle{
+            position:   absolute;
+            display:    inline-block;
+            top:        50%;
+            left:       50%;
+            margin:     -1.5em auto auto -1.5em;
+        }
+        iframe{
+            visibility: hidden;
+        }
+    }
+    
+    @media all and (max-width: @screen-t2){
+        &>.body{
+            width:      ~"calc(100% - 4em)";
+        }
+        .button-close{
+            top:        12px;
+            right:      0;
+        }
+    }
+    
+    @media all and (max-width: @screen-mobile){
+        &:before{
+            content:    "";
+            position:   fixed;
+            top:        0;
+            height:     @nav-height;
+            left:       0;
+            width:      100%;
+            z-index:    99;
+            background: hsl(0, 0%, 45%);
+        }
+        &>.body{
+            width:      100%;
+            transform:  translateY(@nav-height);
+        }
+        .button-close{
+            top:        0;
+            right:      6px;
+            @size:      @nav-height;
+            width:      @size;
+            height:     @size;
+        }
+    }
+}
+
+#modal.on{
+    display:    block;
+}
+
+body.mod-overlay-on-scrollbar #modal{
+    overflow-y: scroll;
+}

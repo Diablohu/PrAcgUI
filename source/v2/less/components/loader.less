@@ -1,0 +1,43 @@
+.loader-circle{
+    @size:      3em;
+    
+    display:        inline-block;
+    vertical-align: top;
+    width:          @size;
+    height:         @size;
+    border:         1px solid @base-border-color;
+    border-top-color:transparent;
+    position:       relative;
+    transform-origin:50% 50%;
+    animation:      rotation 1s infinite linear;
+    
+    &:before{
+        position:   absolute;
+        content:    "";
+        width:      100%;
+        height:     100%;
+        left:       0;
+        top:        -2px;
+        border:     3px solid transparent;
+        border-top-color:@base-border-color;
+        animation:  loader-circle 30s infinite linear;
+    }
+    
+    &, &:before{
+        border-radius:  50%;
+    }
+}
+
+@keyframes loader-circle {
+	0% {    border-top-color: 	@theme-red-a700; }
+	10% {   border-top-color: 	@theme-purple-a700; }
+	20% {   border-top-color: 	@theme-indigo-a700; }
+	30% {   border-top-color: 	@theme-lightblue-a700; }
+	40% {   border-top-color: 	@theme-cyan-a700; }
+	50% {   border-top-color: 	@theme-teal-a700; }
+	60% {   border-top-color: 	@theme-lightgreen-a700; }
+	70% {   border-top-color: 	@theme-lime-a700; }
+	80% {   border-top-color: 	@theme-amber-a700; }
+	90% {   border-top-color: 	@theme-orange-a700; }
+	100% {  border-top-color: 	@theme-deeporange-a700; }
+}

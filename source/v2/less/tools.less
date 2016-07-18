@@ -1,0 +1,307 @@
+// mixins
+.transition(@prop, @duration: @base-transition-duration, @timing-function: @base-transition-timing-function){
+    transition: @prop @duration @timing-function;
+}
+.transition-2(@prop1, @prop2){
+    transition: @prop1 @base-transition-duration @base-transition-timing-function,
+                @prop2 @base-transition-duration @base-transition-timing-function;
+}
+.transition-3(@prop1, @prop2, @prop3){
+    transition: @prop1 @base-transition-duration @base-transition-timing-function,
+                @prop2 @base-transition-duration @base-transition-timing-function,
+                @prop3 @base-transition-duration @base-transition-timing-function;
+}
+
+
+
+
+.ellipsis(){
+    /*
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+    */
+    &:extend(.ellipsis);
+}
+
+
+
+.margin( @bottom: 1em ){
+    margin:     @bottom auto;
+    &:first-child{
+        margin-top:     0;
+    }
+    &:last-child{
+        margin-bottom:  0;
+    }
+}
+.margin-bottom( @value ){
+    margin-bottom:  @value;
+    &:last-child{
+        margin-bottom:  0;
+    }
+}
+
+
+
+.vmiddle(@tag){
+    transform-style: preserve-3d;
+    &>@{tag}{
+        position: 	relative;
+        top: 		50%;
+        transform: 	translateY(-50%);
+        display: 	block;
+    }
+    .browser-ie7({
+        vertical-align:	middle;
+        &>@{tag}{
+            @white:	6px;
+            display:		block;
+            max-width:		98%;
+            max-width:		~"calc(100% - @{white})";
+            max-height:		100%;
+            vertical-align:	middle;
+            margin:			0 auto;
+        }
+        &:after{
+            content:		"";
+            display:		inline-block;
+            vertical-align:	middle;
+            width:			0;
+            height:			100%;
+            overflow:		hidden;
+        }
+    })
+}
+.vmiddle-2(@tag1, @tag2){
+    transform-style: preserve-3d;
+    &>@{tag1},
+    &>@{tag2}{
+        position: 	relative;
+        top: 		50%;
+        transform: 	translateY(-50%);
+        display: 	block;
+    }
+    .browser-ie7({
+        vertical-align:	middle;
+        &>@{tag1},
+        &>@{tag2}{
+            @white:	6px;
+            display:		inline-block;
+            max-width:		98%;
+            max-width:		~"calc(100% - @{white})";
+            max-height:		100%;
+            vertical-align:	middle;
+            margin:			0 auto;
+        }
+        &:after{
+            content:		"";
+            display:		inline-block;
+            vertical-align:	middle;
+            width:			0;
+            height:			100%;
+            overflow:		hidden;
+        }
+    })
+}
+.vmiddle-3(@tag1, @tag2, @tag3){
+    transform-style: preserve-3d;
+    &>@{tag1},
+    &>@{tag2},
+    &>@{tag3}{
+        position: 	relative;
+        top: 		50%;
+        transform: 	translateY(-50%);
+        display: 	block;
+    }
+    .browser-ie7({
+        vertical-align:	middle;
+        &>@{tag1},
+        &>@{tag2},
+        &>@{tag3}{
+            @white:	6px;
+            display:		inline-block;
+            max-width:		98%;
+            max-width:		~"calc(100% - @{white})";
+            max-height:		100%;
+            vertical-align:	middle;
+            margin:			0 auto;
+        }
+        &:after{
+            content:		"";
+            display:		inline-block;
+            vertical-align:	middle;
+            width:			0;
+            height:			100%;
+            overflow:		hidden;
+        }
+    })
+}
+
+.img-in-content(){
+    display:    block;
+    margin:     0 auto;
+    max-width:  85%;
+    max-height: 50%;
+    max-height: ~"calc(50vh - @{navheader-height})";
+    @media all and (max-width: @screen-t2){
+        max-width:  100%;
+        max-height: ~"calc(75vh - @{navheader-height})";
+    }
+}
+
+
+
+
+.coverimg( @position: relative ){
+    /*
+    @supports (transform: translateY(-38.2%)){
+        position: 	absolute;
+        top: 		50%;
+        height:     auto;
+        //margin-top: -38.2%;
+        transform: 	translateY(-50%);
+    }
+    @supports (object-fit: cover){
+        width: 		100%;
+        height:     100%;
+        position:   @position;
+        top:        auto;
+        transform:  none;
+        object-fit: cover;
+        object-position: 50% 38.2%;
+        //font-family: ~"'object-fit: cover; object-position: 50% 38.2%'";
+    }
+    */
+    //@supports (background-size: cover){
+        width: 		100%;
+        height:     100%;
+        position:   @position;
+        top:        auto;
+        transform:  none;
+        background-position: 50% 38.2%;
+        object-fit: cover;
+        object-position: 50% 38.2%;
+        //font-family: ~"'object-fit: cover; object-position: 50% 38.2%'";
+    //}
+}
+
+
+
+
+.card-container(){
+    &:extend(.clearfix all);
+
+    clear:          both;
+    background:     #fff;
+    border:         1px solid @base-border-color;
+    border-radius:  3px;
+    overflow:       hidden;
+
+    box-shadow:     0 2px 3px rgba(0, 0, 0, .05),
+                    0 3px 5px -3px rgba(0, 0, 0, .125);
+    .margin();
+}
+
+
+
+
+
+.overlay(){
+    //background:     @base-background-color;
+    background: 	#fff;
+    border:         1px solid @base-border-color;
+    //.theme(border-color, 500);
+    overflow:       hidden;
+    overflow-y:     auto;
+    box-shadow:     0 2px 3px rgba(0, 0, 0, .25);
+}
+
+
+
+
+
+
+
+
+
+.pixelgrid( @opacity: .35 ){
+    @grid-color:rgba(0, 0, 0, @opacity);
+    background: linear-gradient(45deg, @grid-color 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, @grid-color 75%, @grid-color 0), linear-gradient(45deg, @grid-color 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, @grid-color 75%, @grid-color 0), transparent;
+    background-size:    2px 2px;
+    background-position:0 0, 1px 1px;
+    @-moz-document url-prefix() {
+        @solid-color:rgba(0, 0, 0, (@opacity / 2));
+        background-image: linear-gradient(to bottom, @solid-color, @solid-color);
+    }
+}
+
+
+
+
+
+
+
+
+
+// 深色模式
+.mod-color-deep( @rules ){
+    .mod-color-deep &, &.mod-color-deep{
+        @rules();
+    }
+}
+
+
+
+
+
+
+
+
+
+// 处于iframe内
+.mod-iframe( @rules ){
+    body.mod-iframe &{
+        @rules();
+    }
+}
+
+
+
+
+
+
+
+
+
+// 可见即所得编辑器最大化时
+.editor-fullscreen( @rules ){
+    body.trumbowyg-body-fullscreen &{
+        @rules();
+    }
+}
+
+
+
+
+
+
+
+
+
+// 浏览器兼容
+.browser-ie9( @rules ){
+    html.ie9 &{
+        @rules();
+    }
+}
+.browser-ie8( @rules ){
+    html.ie8 &{
+        @rules();
+    }
+}
+.browser-ie7( @rules ){
+    html.ie7 &{
+        @rules();
+    }
+}

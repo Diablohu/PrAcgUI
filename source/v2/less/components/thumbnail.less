@@ -1,0 +1,150 @@
+@thumbnail-padding: 2px;
+
+.thumbnail{
+    display:    block;
+    position:   relative;
+    overflow:   hidden;
+    border:     1px solid hsl(0, 0%, 85%);
+    padding:    @thumbnail-padding;
+    background: @base-background-color;
+    border-radius: 3px;
+}
+
+    .thumbnail-img{
+        display:    block;
+        background: no-repeat 50% 38.2%;
+        background-size: cover;
+        border-radius: 3px;
+        img{
+            .coverimg();
+            position: absolute;
+            width:  ~"calc(100% - 4px)";
+            height: ~"calc(100% - 4px)";
+        }
+        &[style]{
+            img{
+                display:    none;
+            }
+        }
+    }
+    
+    .thumbnail-overlay{
+        display:    block;
+        position:   absolute;
+        //top:        @thumbnail-padding;
+        //right:      @thumbnail-padding;
+        //bottom:     @thumbnail-padding;
+        //left:       @thumbnail-padding;
+        top:        0;
+        left:       0;
+        width:      100%;
+        height:     100%;
+        border:     @thumbnail-padding solid @base-background-color;
+        z-index:    10;
+        background: hsl(0, 0%, 25%);
+        background: rgba(0, 0, 0, .35);
+        color:      #fff;
+        padding:    @thumbnail-padding;
+        border-radius: 3px;
+    }
+    
+        .thumbnail-overlay-play{
+            @play-button-size: unit(85px / @base-font-size, em);
+            text-align:     center;
+            @media all and (max-width: @screen-t2){
+                font-size:  14px;
+            }
+            @media all and (max-width: @screen-t6){
+                font-size:  12px;
+            }
+            font{
+                display:    inline-block;
+                text-align: left;
+                max-width:  100%;
+                min-width:  50%;
+                position:   relative;
+                padding-left:(@play-button-size + .75em);
+                &:after, &:before{
+                    position:   absolute;
+                    display:    block;
+                }
+                &:before{
+                    /*
+                    content:    "▶";
+                    color:      #fff;
+                    opacity:    .9;
+                    font-size:  @play-button-size;
+                    line-height:0;
+                    top:        50%;
+                    left:       0;
+                    width:      @play-button-size;
+                    text-align: center;
+                    */
+                    content:    "";
+                    width:      0;
+                    height:     0;
+                    opacity:    .9;
+                    border-left:    (@play-button-size / 2.5) solid #fff;
+                    border-top:     (@play-button-size / 4) solid transparent;
+                    border-bottom:  (@play-button-size / 4) solid transparent;
+                    left:       (@play-button-size * 34 / 100);
+                    top:        (@play-button-size * 22.5 / 100);
+                }
+                &:after{
+                    content:    "";
+                    width:      @play-button-size;
+                    height:     @play-button-size;
+                    left:       0;
+                    top:        0;
+                    opacity:    .5;
+                    background: #fff;
+                    border-radius: 50%;
+                    @supports( background: rgba(255, 255, 255, .5) ){
+                        opacity:    .75;
+                        background: rgba(255, 255, 255, .5);
+                        border:     1px solid #fff;
+                    }
+                }
+            }
+            span, strong, small{
+                display:    block;
+                line-height:1.2em;
+            }
+            strong{
+                font-weight:400;
+                font-size:  2em;
+                margin:     .15em 0;
+            }
+        }
+
+a.thumbnail{
+    .theme( border-color, a400 );
+	&:hover{
+		background:     #fff;
+		//.theme( background-color, a100 );
+		.theme( border-color, 900 );
+        .thumbnail-overlay{
+            background: rgba(0, 0, 0, .25);
+        }
+	}
+	&:active{
+		.theme( border-color, 200 );
+        opacity:    .75;
+	}
+}
+
+a .thumbnail{
+    .theme( border-color, a400 );
+}
+a:hover .thumbnail{
+    background:     #fff;
+    //.theme( background-color, a100 );
+    .theme( border-color, 900 );
+    .thumbnail-overlay{
+        background: rgba(0, 0, 0, .25);
+    }
+}
+a:active .thumbnail{
+    .theme( border-color, 200 );
+    opacity:    .75;
+}

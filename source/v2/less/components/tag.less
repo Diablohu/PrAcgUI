@@ -1,0 +1,36 @@
+.tag{
+    display:    inline-block;
+    border:     1px solid @base-border-color;
+    line-height:1.2em;
+    padding:    .25em .75em;
+    background: hsl(0, 0%, 95%);
+    border-radius: 3px;
+    font-size:  .75em;
+    border-left-width: 4px;
+    vertical-align: top;
+    overflow:   hidden;
+    
+    .applycolor( @themename ){
+        //body.theme-@{themename} &{
+        &.tag-color-@{themename}{
+            @ref: 'theme-@{themename}-300';
+            //background-color: @@ref;
+            border-left-color: @@ref;
+        }
+    }
+    .all-color(@i: length(@themes)) when (@i > 0) {
+        .all-color(@i - 1);
+        @theme: extract(@themes, @i);
+        .applycolor( @theme );
+    }
+    .all-color();
+}
+
+a.tag{
+    &:hover{
+        background:     #fff;
+    }
+    &:active{
+        background:     hsl(0, 0%, 90%);
+    }
+}

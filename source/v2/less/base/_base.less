@@ -1,0 +1,94 @@
+
+.clear {
+    clear:      both;
+    display:    block;
+}
+
+.clearfix{
+    &:after{
+        content:    "";
+        //display:    block;
+        display:    table;
+        zoom:       1;
+        line-height: 0;
+        font-size:  0;
+        height:     0;
+        visibility: hidden;
+    }
+}
+
+.ellipsis{
+    white-space:    nowrap;
+    overflow:       hidden;
+    text-overflow:  ellipsis
+}
+
+:focus, :active{
+    outline:    0;
+}
+
+[disabled],.disabled,.disable{
+    pointer-events: none;
+}
+
+table{
+    font-size:      1em;
+}
+
+
+
+
+.center, .text-center{
+    text-align:     center;
+}
+.float-left{
+    float:      left;
+}
+.float-right{
+    float:      right;
+}
+.full-width{
+    width:      100%;
+}
+
+.mt0 {
+     margin-top: 0 !important;
+ }
+.mt40 {
+    margin-top: 40px !important;
+}
+
+
+
+
+/*
+h1, h2, h3, h4, h5, h6,
+title,
+p,
+ul, ol, li,
+dl, dt, dd{
+    &:first-child{
+        margin-top: 0;
+    }
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+*/
+&:first-child{
+    margin-top: 0;
+}
+&:last-child{
+    margin-bottom: 0;
+}
+
+
+
+
+hr{
+    border-color:   @base-border-color;
+    border-style:   solid;
+    border-width:   0;
+    border-top-width: 1px;
+    margin:         1.5em auto;
+}

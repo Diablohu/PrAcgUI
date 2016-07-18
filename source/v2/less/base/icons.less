@@ -1,0 +1,36 @@
+@font-face {
+    @path_iconfont: ~"@{path_fonts}/icomoon";
+    @revision: 		~"n14pwf";
+    font-family: 'icon';
+    src:url(~"@{path_iconfont}.eot?@{revision}");
+    src:url(~"@{path_iconfont}.eot?@{revision}") format('embedded-opentype'),
+        url(~"@{path_iconfont}.ttf?@{revision}") format('truetype'),
+        url(~"@{path_iconfont}.woff?@{revision}") format('woff'),
+        url(~"@{path_iconfont}.svg?@{revision}") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[icon]:before{
+    font-family:	'icon';
+    content:		attr(icon);
+    speak:			none;
+    vertical-align:	text-middle;
+    display:		inline-block;
+    padding-right:	0.25em;
+    font-weight:	lighter !important;
+    font-style:		normal !important;
+    min-width:		1.25em;
+    text-align: 	center;
+}
+
+
+[icon="user"]:before {
+    content: "\e900" !important;;
+}
+
+@icon-search: 		"\eb33";
+
+
+
+[icon="search"]:before		{content: @icon-search !important;}

@@ -1,0 +1,71 @@
+@avatarleft-img-size:   50px;
+@avatarleft-img-gutter: 2px;
+
+.avatarleft{
+    display:    inline-block;
+    position:   relative;
+    vertical-align: top;
+    
+    //padding-left:   (@avatarleft-img-size + 10);
+    min-height:     @avatarleft-img-size;
+    width:          100%;
+    
+    .thumbnail{
+        //position:   absolute;
+        //top:        0;
+        //left:       0;
+        float:      left;
+        margin-right:8px;
+        img{
+            width:  (@avatarleft-img-size - 6);
+            height: (@avatarleft-img-size - 6);
+        }
+        img + img{
+            margin-left:    @avatarleft-img-gutter;
+        }
+    }
+    
+    .caption{
+        display:    table-cell;
+        height:     50px;
+        vertical-align: middle;
+        line-height:1.2em;
+        small, sub, sup{
+            display:    block;
+            font-size:  0.75em;
+            line-height:1em;
+            color:      @base-color;
+            top:        auto;
+            //.ellipsis();
+        }
+        [prefix="CV"]{
+            color:  @base-color-main;
+            padding-left: 1.6em;
+            position:   relative;
+            &:before{
+                content:"CV";
+                color:  @base-color;
+                position:   absolute;
+                top:        0;
+                left:       0;
+                font-weight:100;
+            }
+        }
+        sub{
+            top: .25em;
+        }
+        sup{
+            top: -.25em;
+        }
+    }
+}
+
+a .avatarleft, a.avatarleft{
+    &:active{
+        .caption{
+            [prefix="CV"]{
+                color:  lighten(@base-color-main, 40%);
+            }
+        }
+    }
+}

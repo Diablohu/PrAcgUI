@@ -1,0 +1,21 @@
+{
+  "name": "prpr",
+  "description": "Dong man bai ke website",
+  "main": "html/home.html",
+  "authors": [
+    "Diablohu <diablohudream@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "dropzone": "^4.3.0"
+  }
+}

@@ -1,0 +1,28 @@
+.infolist{
+    
+    display:    table;
+    
+    dl{
+        display:    table-row;
+    }
+    
+    dt{
+        color:      @base-color;
+        display:    table-cell;
+        text-align: right;
+        white-space:nowrap;
+    }
+    
+    dd{
+        display:    table-cell;
+        margin:     0;
+        padding-left:   1em;
+        &:first-child{
+            padding-left:   0;
+        }
+    }
+    
+    .divider{
+        color:      hsl(0, 0%, 75%);
+    }
+}

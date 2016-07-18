@@ -1,0 +1,52 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	font-family:@font_family_title;
+    //font-weight:400;
+    font-weight:600;
+	position: 	relative;
+    //color:      hsl(0, 0, 65%);
+    margin-top: 1.5em;
+    .margin-bottom(1em);
+	.theme( color, 900 );
+    cursor:     default;
+    
+    small{
+        opacity:    .75;
+        padding-left:.75em;
+        font-weight: 100;
+    }
+    
+    /*
+    & ~ h2,
+    & ~ h3,
+    & ~ h4,
+    & ~ h5,
+    & ~ h6{
+        //margin-top: 1.5em;
+        margin-top: 2em;
+    }
+    */
+    
+    .sideline{
+        position:   relative;
+        &:after{
+            content:    "";
+            position:   absolute;
+            bottom:     45%;
+            left:       100%;
+            width:      @layout-width-max;
+            margin-left:15px;
+            height:     1px;
+            background: hsl(0, 0, 85%);
+            z-index:    -1;
+        }
+    }
+    
+    a:hover{
+        text-decoration: none;
+    }
+}

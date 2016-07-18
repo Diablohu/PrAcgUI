@@ -1,0 +1,293 @@
+.row-2col{
+    overflow:   hidden;
+    position:   relative;
+    vertical-align: top;
+    margin-right:   (0 - @grid-gutter-width);
+    
+    clear: both;
+    
+    .col-main{
+        width:      ~"calc( 100% - 300px - @{grid-gutter-width} )";
+        overflow:   hidden;
+        position:   relative;
+        float:      left;
+        vertical-align: top;
+		border-right: 	@grid-gutter-width solid transparent;
+    }
+    .col-aside{
+        width:      (300px + @grid-gutter-width);
+        position:   relative;
+        overflow:   hidden;
+        float:      left;
+        vertical-align: top;
+		border-right: 	@grid-gutter-width solid transparent;
+    }
+    
+    @media all and (max-width: @screen-t2){
+        margin-right:   auto;
+        .col-main, .col-aside{
+            border-right-width: 0;
+            width:      auto;
+            float:      none;
+        }
+        .col-main ~ .col-aside,
+        .col-aside ~ .col-main{
+            margin-top:     @grid-gutter-width;
+        }
+    }
+    
+    &.mod-old{
+        padding-right:  (300px + @grid-gutter-width);
+        margin-right:   auto;
+        
+        .col-main{
+            width:      auto;
+            float:      none;
+            border-right-width: 0;
+        }
+        .col-aside{
+            position:   absolute;
+            top:        0;
+            right:      0;
+            float:      none;
+            border-right-width: 0;
+        }
+        
+        .col-aside:first-child{
+            right:  auto;
+            left:   0;
+            & ~ .col-main{
+                left:   (300px + @grid-gutter-width);
+            }
+        }
+        
+        @media all and (max-width: @screen-t2){
+            padding-right:  0;
+            .col-aside{
+                position:   relative;
+                top:        auto;
+                right:      auto;
+                left:       auto;
+            }
+            .col-aside:first-child ~ .col-main{
+                left:       auto;
+            }
+        }
+    }
+}
+
+
+
+.row,
+.row-3div,
+.row-4div,
+.row-6div,
+.row-16div{
+    @gutter:    @grid-gutter-width;
+    margin-right:   (0 - @gutter);
+    margin-top:     (0 - @gutter);
+
+    clear: both;
+
+    .col{
+		border-right: 	@gutter solid transparent;
+        //margin-right:   @gutter;
+        vertical-align: top;
+        float:          left;
+        margin-top:     @gutter;
+    }
+    
+    &:after{
+        content:    "";
+        display:    block;
+        clear:      both;
+    }
+    
+    .gutter(@number){
+        @gutter:    unit(@number, px);
+        &.row-gutter-@{number}{
+            margin-right:   (0 - @gutter);
+            margin-top:     (0 - @gutter);
+            .col{
+                //margin-right:   @gutter;
+                border-right-width: @gutter;
+                margin-top:         @gutter;
+            }
+        }
+    }
+    .gutter(10);
+    .gutter(15);
+    .gutter(20);
+}
+
+
+
+
+.row{
+	.col(@n, @i: 1) when (@i =< @n) {
+		.col-@{i}{
+			width: 	percentage( @i / 12 );
+		}
+		.col(@n, (@i + 1));
+	}
+	.col(12);
+  .gutter(@number){
+    @gutter:    unit(@number, px);
+    &.row-gutter-@{number}{
+      margin-bottom:   (0 - @gutter);
+      .col{
+        //margin-right:   @gutter;
+        margin-bottom:         @gutter;
+      }
+    }
+  }
+  .gutter(10);
+  .gutter(15);
+  .gutter(20);
+
+
+
+    @media all and (max-width: @screen-mobile){
+        margin-right:   auto !important;
+        &:first-of-type{
+            margin-top:     auto !important;
+        }
+        .col{
+            width:  auto !important;
+            float:  none;
+            border-right-width: 0 !important;
+            //&:first-child{
+                //margin-top:     auto !important;
+            //}
+        }
+    }
+}
+
+
+.row-3div,
+.row-4div,
+.row-6div,
+.row-16div{
+    @media all and (max-width: @screen-t6){
+        margin-right:   auto !important;
+        //&:first-of-type{
+            margin-top:     auto !important;
+        //}
+        .col{
+            width:  auto !important;
+            float:  none;
+            border-right-width: 0 !important;
+            //&:first-child{
+            //    margin-top:     auto !important;
+            //}
+        }
+    }
+}
+
+
+
+.row-3div {
+  .col(@n, @i: 1) when (@i =< @n) {
+    .col-@{i}{
+      width: 	percentage( @i / 3 );
+    }
+    .col(@n, (@i + 1));
+  }
+  .col(3);
+
+  @media all and (max-width: @screen-mobile){
+    .col-2,.col-1,.col-3{
+      width:  50%;
+    }
+
+  }
+}
+
+.row-4div{
+	.col(@n, @i: 1) when (@i =< @n) {
+		.col-@{i}{
+			width: 	percentage( @i / 4 );
+		}
+		.col(@n, (@i + 1));
+	}
+	.col(4);
+
+    @media all and (max-width: @screen-mobile){
+        .col-1{
+            width:  50%;
+        }
+        .col-2,
+        .col-3{
+            width:  100%;
+        }
+    }
+}
+
+
+
+.row-6div{
+	.col(@n, @i: 1) when (@i =< @n) {
+		.col-@{i}{
+			width: 	percentage( @i / 6 );
+		}
+		.col(@n, (@i + 1));
+	}
+	.col(6);
+
+    @media all and (max-width: @screen-mobile){
+        .col-1{
+            width:  33.3333%;
+        }
+        .col-4{
+            width:  50%;
+        }
+        .col-5{
+            width:  100%;
+        }
+    }
+}
+
+
+
+.row-16div{
+	.col(@n, @i: 1) when (@i =< @n) {
+		.col-@{i}{
+			width: 	percentage( @i / 16 );
+		}
+		.col(@n, (@i + 1));
+	}
+	.col(16);
+
+
+
+
+    @media all and (max-width: @screen-mobile){
+        .col-1,
+        .col-2{
+            width:  25%;
+        }
+        .col-3{
+            width:  33.3333%;
+        }
+        .col-4,
+        .col-5{
+            width:  50%;
+        }
+        .col-6,
+        .col-7{
+            width:  66.6666%;
+        }
+        .col-8(@n, @i: 8) when (@i =< @n) {
+            .col-@{i}{
+                width: 	100%;
+            }
+            .col-8(@n, (@i + 1));
+        }
+        .col-8(16);
+    }
+
+}
+
+.row[martop=false] {
+    margin-top: 0;
+}

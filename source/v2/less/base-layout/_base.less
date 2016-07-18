@@ -1,0 +1,86 @@
+
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+
+html, body{
+	height: 100%;
+}
+
+html{
+	font-family: 	@font_family_sans;
+	background: 	@base-background-color;
+	color: 			@base-color;
+	font-size: 		@base-font-size;
+	line-height: 	@base-line-height;
+	box-sizing:  	border-box;
+
+	@media all and (max-width: @screen-t1){
+		font-size: (@base-font-size * 0.9375);
+	}
+
+	@media all and (max-width: @screen-t2){
+		font-size: (@base-font-size * 0.875);
+	}
+}
+
+body.mod-overlay-on{
+    overflow-y: hidden;
+}
+
+#layout{
+	position: 	relative;
+	min-height: 100%;
+	width: 		100%;
+	z-index: 	1;
+	padding-bottom: @footer-height;
+	min-width: 	@screen-t1;
+	overflow-x: hidden;
+	@media all{
+		min-width: 	0;
+	}
+    .mod-iframe({
+        padding-bottom: 	0;
+    });
+}
+
+.layout-wrapper{
+	width: 		90%;
+	max-width: 	@layout-width-max;
+	margin: 	0 auto;
+	position: 	relative;
+	//overflow: 	hidden;
+	border-left:  	0 solid transparent;
+	border-right:  	0 solid transparent;
+	//@media all and (max-width: 1280px){
+	//	width: 		90%;
+	//}
+	@media all and (max-width: @screen-t1){
+		width: 		100%;
+		border-left-width: 	30px;
+		border-right-width:	30px;
+	}
+	@media all and (max-width: @screen-mobile){
+		border-left-width: 	24px;
+		border-right-width:	24px;
+	}
+	@media all and (max-width: @screen-t5 ){
+		border-left-width: 	16px;
+		border-right-width:	16px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+// Mobile View
+	@media all and (max-width: @screen-mobile ){
+	}
+	@media all and (max-width: @screen-t5 ){
+	}

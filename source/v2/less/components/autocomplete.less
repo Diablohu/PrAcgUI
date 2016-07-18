@@ -1,0 +1,23 @@
+#autocomplete{
+    
+    .result{
+        z-index:        @zIndex-autocomplete;
+        position:       absolute;
+        top:            -1000%;
+        left:           -1000%;
+        display:        none;
+        animation:      fadeInDown .3s ease-out;
+        .overlay();
+        
+        &.on{
+            display:        block;
+        }
+        
+        &>.item{
+            line-height:    1.2em;
+            padding:        .4em .75em;
+            display:        block;
+        }
+    }
+
+}

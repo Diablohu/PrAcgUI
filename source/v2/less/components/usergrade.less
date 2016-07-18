@@ -1,0 +1,53 @@
+
+@gray-color: #808080;
+
+.user-grade {
+    ul,li {
+        list-style: none;
+    }
+    font-size: 0.8em;
+    .user-grade-cont {
+        position: relative;
+        margin-left: -33px;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        li {
+            float: left;
+            margin-right: 27px;
+            text-align: center;
+            span,p {
+                color: @gray-color;
+                margin: 0;
+            }
+            .user-grade-num {
+                .theme(color,900);
+                font-size: 40px;
+                line-height: 54px;
+                margin: 0;
+            }
+            .user-grade-big-num {
+                font-size: 72px;
+                line-height: 72px;
+            }
+
+            .people{
+                display:    block;
+                font-size:  .875em;
+                font-weight:bold;
+                padding:    .1em .3em .05em .3em;
+                float:      left;
+                margin:     -.15em .4em 0 0;
+                background: rgba(255, 255, 255, .2);
+                border:     1px solid rgba(255, 255, 255, .75);
+                border-radius: 3px;
+                &:before{
+                    content:    "\2605";
+                    padding-right: .25em;
+                    font-weight:normal;
+                }
+            }
+        }
+    }
+
+}

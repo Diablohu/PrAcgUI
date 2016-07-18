@@ -1,0 +1,35 @@
+.dropdown{
+    position:   relative;
+}
+
+    .dropdown-menu{
+        //display:        none;
+        //animation:      fadeInDown .3s ease-out;
+        position:       absolute;
+        left:           0;
+        //top:            100%;
+        z-index:        100;
+        .overlay();
+        opacity:        0;
+        visibility:     hidden;
+        user-select:    none;
+        transform:      translateY(-20px);
+        transition:     all 0s ease-out, opacity .1s ease-out;
+        transition-delay:.1s, 0s;
+    }
+
+.dropdown-right .dropdown-menu{
+    left:   auto;
+    right:  0;
+}
+
+.dropdown:focus{
+    outline:    0;
+    .dropdown-menu{
+        opacity:        1;
+        visibility:     visible;
+        transition:     all .3s ease-out;
+        transform:      none;
+        //display:    block;
+    }
+}
