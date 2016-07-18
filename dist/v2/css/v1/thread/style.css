@@ -1,0 +1,47 @@
+/*朋友圈*/
+.friendcircle-list li {
+    border-bottom: 1px solid #eaeaea;
+    padding: 10px 0;
+
+}
+.friendcircle-list li h3 a {
+    font-size: 22px;
+    /*color: #0d1d33;*/
+}
+.friend-operate {
+    margin-top: 8px;
+}
+.friend-operate a {
+    color: #333;
+    margin-right: 8px;
+}
+.friend-operate a:hover {
+    color: #00b7ee;
+}
+.friend-operate .date{
+    float: right;
+    font-size: 12px;
+    color: #888;
+
+}
+.c-discus b,.c-zan b,.c-share b {
+    display: inline-block;
+    *display:inline;
+}
+.img-list {
+    position: relative;
+    margin-right: -8px;
+}
+.img-list a {
+    display: inline-block;
+    width: 170px;
+    height: 130px;
+    *dispaly:inline;
+    margin-right: 8px;
+    overflow: hidden;
+
+}
+.img-list a img {
+    width: 100%;
+    height: auto;
+}

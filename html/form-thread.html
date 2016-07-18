@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="ie9"><![endif]-->
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if IE 7]><html class="ie7"><![endif]-->
+<!---->
+<html>
+
+<head>
+    <title>发布帖子 - 圈子 - PrPr</title>
+    <base target="_self">
+    <meta name="Robots" content="all">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- 全局资源 -->
+        <!--[if lte IE 8]><script type="text/javascript" src="../assets/v2/js/libs-old.min.js"></script><![endif]-->
+        <!--[if gte IE 9|!(IE)]><!-->
+        <script type="text/javascript" src="../dist/v2/js/libs.js"></script>
+        <!--<![endif]-->
+        <script type="text/javascript" src="../dist/v2/js/base.js"></script>
+        <link rel="stylesheet" type="text/css" href="../dist/v2/css/base.css">
+    
+    <!-- 站内/页面变量，具体内容参见全局变量 flagMap -->
+    
+    <!-- 针对第三方网站/服务 -->
+    
+    <!-- 针对各浏览器的标准制定 -->
+        <!-- IE/Edge -->
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- iOS -->
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+
+<body class="theme-purple">
+
+<div id="layout">
+
+    <div id="nav">
+        <div class="layout-wrapper">
+            <dl class="links">
+                <dt>
+                    <a href="/">首页</a>
+                    <a href="/">动画</a>
+                    <a href="/">漫画</a>
+                </dt>
+                <dd>
+                    <a href="/">新番</a>
+                    <a href="/">推特</a>
+                    <a href="/">圈子</a>
+                    <a href="/">榜单</a>
+                    <a href="/">广播</a>
+                </dd>
+            </dl>
+            <div class="login">
+                <a href="URL_TO_LOGIN" target="_self">登陆</a> / <a href="URL_TO_REGISTER" target="_self">注册</a>
+            </div>
+            <!--
+            <div class="user">
+                <a href="URL_TO_USER"><img src="docs/images/tweet-avatar-14.jpg" /></a>
+            </div>
+            -->
+            <form class="search" action="URL_TO_SEARCH" method="GET" autocomplete="off" >
+                <input type="search" name="search" required placeholder="搜索PRPR" />
+                <input type="submit" />
+            </form>
+        </div>
+    </div> <!-- #nav -->
+
+    <!-- 头部（header）, 注意 class -->
+    <div id="header" class="mod-title">
+        <div class="header-title">
+            <div class="layout-wrapper">
+                <h1>发表新话题</h1>
+            </div>
+        </div>
+    </div> <!-- #header -->
+
+    <div id="main" class="page-circle">
+        <div class="layout-wrapper">
+            
+            <!-- 表单: 发布帖子 -->
+            <form class="form-full form--newpost">
+                <!-- 此处为用户不可见的表单元素，包括: 回复到主帖ID、回复到回复ID、来自于圈子ID、当前编辑的帖子ID、当前编辑的回复ID-->
+                <input type="hidden" name="tid" />
+                <input type="hidden" name="circle_id" />
+                
+                <!-- 错误信息，出错时输出 -->
+                <dl class="form-error">错误信息</dl>
+                <!-- 错误信息 - 结束 -->
+                
+                <div class="form-items">
+                    <label class="form-item">
+                        <dt>标题</dt>
+                        <dd>
+                            <input type="text" name="subject" required />
+                        </dd>
+                    </label>
+                    <label class="form-item">
+                        <dt>标签</dt>
+                        <dd>
+                            <div class="taglist">
+                                <span class="tag is-editable" tag-id="1">测试TAG #1<s>×</s></span>
+                                <span class="tag" tag-id="2">测试TAG #2 (不可编辑版)<s>×</s></span>
+                                <input type="text" autocomplete="off" prpr-autocomplete="tag" />
+                                <input name="tags" type="hidden" />
+                            </div>
+                        </dd>
+                    </label>
+                    <div class="form-item">
+                        <dt>内容</dt>
+                        <dd>
+                            <textarea class="message" name="textarea1" required trumbowyg></textarea>
+                        </dd>
+                    </div>
+                    <div class="form-item">
+                        <dt>测试 - 第二个编辑器</dt>
+                        <dd>
+                            <textarea class="message" required trumbowyg></textarea>
+                        </dd>
+                    </div>
+                </div>
+                <dl class="form-actions">
+                    <input type="submit" class="button button-primary button-large" value="提交" />
+                    
+                    <!-- 如果可以获取到来源地址，输出 A 标签，href 为 URL -->
+                    <a href="javascript:;" class="link-cancel" button="cancel">取消并返回</a>
+                    <!-- 否则，输出 BUTTON 标签 -->
+                    <button type="button" class="link link-cancel" button="cancel">取消</button>
+                    
+                </dl>
+            </form>
+            <!-- 表单: 发布帖子 - 结束 -->
+            
+        </div>
+    </div> <!-- #main -->
+
+    <div id="footer">
+        <div class="layout-wrapper">
+            &copy; 2016 PrPrACG
+        </div>
+    </div> <!-- #footer -->
+
+</div> <!-- #layout -->
+
+<link rel="stylesheet" type="text/css" href="../dist/v2/css/page-circle.css">
+
+</body>
+
+</html>

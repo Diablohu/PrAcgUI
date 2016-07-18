@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="ie9"><![endif]-->
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if IE 7]><html class="ie7"><![endif]-->
+<!---->
+<html>
+
+<head>
+    <title>登录 - PrPr</title>
+    <base target="_self">
+    <meta name="Robots" content="all">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- 全局资源 -->
+        <!--[if lte IE 8]><script type="text/javascript" src="../assets/v2/js/libs-old.min.js"></script><![endif]-->
+        <!--[if gte IE 9|!(IE)]><!-->
+        <script type="text/javascript" src="../dist/v2/js/libs.js"></script>
+        <!--<![endif]-->
+        <script type="text/javascript" src="../dist/v2/js/base.js"></script>
+        <link rel="stylesheet" type="text/css" href="../dist/v2/css/base.css">
+    
+    <!-- 站内/页面变量，具体内容参见全局变量 flagMap -->
+    
+    <!-- 针对第三方网站/服务 -->
+    
+    <!-- 针对各浏览器的标准制定 -->
+        <!-- IE/Edge -->
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- iOS -->
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+
+<body class="theme-purple">
+
+<div id="layout">
+
+    <div id="nav">
+        <div class="layout-wrapper">
+            <dl class="links">
+                <dt>
+                    <a href="/">首页</a>
+                    <a href="/">动画</a>
+                    <a href="/">漫画</a>
+                </dt>
+                <dd>
+                    <a href="/">新番</a>
+                    <a href="/">推特</a>
+                    <a href="/">圈子</a>
+                    <a href="/">榜单</a>
+                    <a href="/">广播</a>
+                </dd>
+            </dl>
+            <div class="login">
+                <a href="/html/form-login.html" modal="true" target="_self">登录</a> / <a href="/html/form-register.html" modal="true" target="_self">注册</a>
+            </div>
+            <!--
+            <div class="user">
+                <a href="URL_TO_USER"><img src="docs/images/tweet-avatar-14.jpg" /></a>
+            </div>
+            -->
+            <form class="search" action="URL_TO_SEARCH" method="GET" autocomplete="off" >
+                <input type="search" name="search" required placeholder="搜索PRPR" />
+                <input type="submit" />
+            </form>
+        </div>
+    </div> <!-- #nav -->
+
+    <!-- 头部（header）, 注意 class -->
+    <div id="header" class="mod-title">
+        <div class="header-title">
+            <div class="layout-wrapper">
+                <h1>登录</h1>
+            </div>
+        </div>
+    </div> <!-- #header -->
+
+    <div id="main" class="page-login">
+
+
+
+
+
+
+
+
+
+
+<div class="layout-wrapper">
+    
+    <!-- 表单: 发布帖子 -->
+    <form class="form-small form--login">
+        <!-- 错误信息，出错时输出 -->
+        <dl class="form-error">错误信息</dl>
+        <!-- 错误信息 - 结束 -->
+        
+        <div class="form-items">
+            <label class="form-item">
+                <dt>邮箱</dt>
+                <dd>
+                    <input type="email" name="email" required />
+                </dd>
+            </label>
+            <label class="form-item">
+                <dt>密码</dt>
+                <dd>
+                    <input type="password" name="password" required />
+                </dd>
+            </label>
+            <div class="form-item">
+                <dt></dt>
+                <dd>
+                    <a href="javascript:;" class="float-right">忘记密码？</a>
+                    <label>
+                        <input type="checkbox" name="login-checked"/>
+                        <span class="label">下次自动登录</span>
+                    </label>
+                </dd>
+            </div>
+        </div>
+        <dl class="form-actions">
+            <input type="submit" class="button button-primary button-large button-full" value="登录" />
+            <a href="/html/form-register.html" class="button button-link button-full" />没有帐号？点击注册</a>
+        </dl>
+    </form>
+    <!-- 表单: 发布帖子 - 结束 -->
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+    </div> <!-- #main -->
+
+    <div id="footer">
+        <div class="layout-wrapper">
+            &copy; 2016 PrPrACG
+        </div>
+    </div> <!-- #footer -->
+
+</div> <!-- #layout -->
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+callback2(
+{
+code: 200,
+result: {
+pageinfo: {
+total_items: 2,
+total_pages: 1,
+remain_items: 0,
+current_page: 1
+},
+datas: [
+{
+id: "3",
+content: "收电费收费1",
+score: "7.0",
+uid: "7",
+username: "tianruijie",
+time: "1星期前",
+face: "http://img.acgn.prpracg.com/00/00752575cc0b2e1e3e349aee7060a825.jpeg"
+},
+{
+id: "1",
+content: "dgdg",
+score: "8.0",
+uid: "2",
+username: "",
+time: "-1年前"
+}
+]
+}
+}
+)

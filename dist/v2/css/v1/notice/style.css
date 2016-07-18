@@ -1,0 +1,19 @@
+/*消息通知页面*/
+.news-list li{
+    border-bottom: 1px solid #eaeaea;
+    line-height: 40px;
+}
+.news-list span{
+    font-size: 16px;
+    float: left;
+    color: #333;
+}
+.news-list em,.news-list b {
+    font-size: 12px;
+    float: right;
+    margin-left: 20px;
+}
+.news-list b {
+    cursor: pointer;
+    display: none;
+}

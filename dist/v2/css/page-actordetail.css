@@ -1,0 +1,28 @@
+.page-roledetail .main-banner .row-2col {
+    min-height: 206px;
+}
+
+.page-roledetail .avatarleft .caption {
+    height: 54px;
+}
+
+.page-roledetail .avatarleft .thumbnail {
+    border: none;
+    -webkit-border-radius: inherit;
+            border-radius: inherit;
+}
+
+.page-roledetail .avatarleft .thumbnail img {
+    width: 54px;
+    height: 54px;
+}
+
+.page-roledetail .col-main .row-6div .col-l {
+    height: 300px;
+    overflow: hidden;
+}
+
+.page-roledetail .col-main .button {
+    margin: 30px auto 0;
+    display: table;
+}

@@ -1,0 +1,7 @@
+.form--uploader {
+    padding-bottom: 2em;
+}
+
+.form--uploader input[type=file] {
+    display: none;
+}

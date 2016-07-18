@@ -1,0 +1,16 @@
+.page-actortag a:hover {
+    text-decoration: none;
+}
+
+.page-actortag .col-actor .row, .page-actortag .row-actor {
+    margin-top: 30px;
+}
+
+.page-actortag .actor-list b {
+    color: #ccc;
+    font-weight: 400;
+}
+
+.page-actortag .actor-list a {
+    font-size: 14px;
+}

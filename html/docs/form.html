@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="ie9"><![endif]-->
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if IE 7]><html class="ie7"><![endif]-->
+<!---->
+<html>
+
+<head>
+    <title>表单 - PrPr</title>
+    <base target="_self">
+    <meta name="Robots" content="all">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta charset="UTF-8">
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="../../assets/v2/js/libs-old.min.js"></script><![endif]-->
+    <!--[if gte IE 9|!(IE)]><!-->
+    <script type="text/javascript" src="../../dist/v2/js/libs.js?20160423"></script>
+    <!--<![endif]-->
+    
+    <script type="text/javascript" src="../../dist/v2/js/base.js?20160423"></script>
+    
+    <link rel="stylesheet" type="text/css" href="../../dist/v2/css/base.css?20160423">
+</head>
+
+<body>
+
+<div id="layout">
+
+    <div id="nav">
+        <div class="layout-wrapper">
+            <dl class="links">
+                <dt>
+                    <a href="/">首页</a>
+                    <a href="/">动画</a>
+                    <a href="/">漫画</a>
+                </dt>
+                <dd>
+                    <a href="/">新番</a>
+                    <a href="/">推特</a>
+                    <a href="/">圈子</a>
+                    <a href="/">榜单</a>
+                    <a href="/">广播</a>
+                </dd>
+            </dl>
+            <div class="login">
+                <a href="/html/form-login.html" modal="true" target="_self">登录</a> / <a href="/html/form-register.html" modal="true" target="_self">注册</a>
+            </div>
+            <!--
+            <div class="user">
+                <a href="URL_TO_USER"><img src="docs/images/tweet-avatar-14.jpg" /></a>
+            </div>
+            -->
+            <form class="search" action="URL_TO_SEARCH" method="GET" autocomplete="off" >
+                <input type="search" name="search" required placeholder="搜索PRPR" />
+                <input type="submit" />
+            </form>
+        </div>
+    </div> <!-- #nav -->
+
+    <div id="header" class="mod-banner">
+        <div class="header-title">
+            <div class="layout-wrapper vmiddle">
+                <div class="vmiddle-body">
+                    <div class="infos">
+                        <span class="star">6.5</span>内部文档
+                    </div>
+                    <h1>
+                        <a href="frame.html">前端开发文档</a>
+                    </h1>
+                    <h4>Front-End Development Documents</h4>
+                </div>
+            </div>
+        </div>
+        <div class="header-nav">
+            <div class="layout-wrapper">
+                <a class="header-cover" href="person-intro.html" style="background-image:url(images/structure.jpg)">
+                    <img src="images/structure.jpg" />
+                </a>
+                <div class="header-nav-bar">
+                    <div class="header-nav-bar-body">
+                        <a href="frame.html">全局框架</a>
+                        <a href="components.html">基础组件</a>
+                        <a href="list.html">内容列表</a>
+                        <a href="form.html" class="on">表单</a>
+                        <a href="dev.html">开发指南</a>
+                    </div>
+                </div>
+                <button type="button" class="header-subcribe" button="subcribe">订阅</button>
+            </div>
+        </div>
+        <div class="header-banner">
+            <div class="header-banner-img" style="background-image:url(images/structure4.jpg)"></div>
+        </div>
+    </div> <!-- #header -->
+
+    <div id="main" class="page-docs-front-end">
+        <div class="main-banner">
+            <div class="layout-wrapper">
+                欢迎来到 <em>PRPRACG</em> 前端开发文档。本页将介绍全站的特殊内容列表，如推文列表、词条链接列表等。
+            </div>
+        </div>
+        <div class="layout-wrapper">
+            <div class="row-2col">
+                <div class="col-main" id="doc-front-end-main">
+
+                    <h2><span class="sideline">标准结构</span></h2>
+                    <div class="doc-sample">
+                        <figure>
+                            <pre>form[form="FORMTYPE"]
+├ dl.form-error (错误信息，可能不存在)
+├ .form-items
+│  ├ label.form-item (如果希望项目标题可以与录入框互动，可使用label)
+│  │  ├ dt (项目标题)
+│  │  └ dd
+│  │     └ input (具体的表单内容)
+│  ├ .form-item
+│  ├ .form-item
+└ .form-actions (操作项，下属可为各种按钮)</pre>
+                        </figure>
+                    </div>
+                    <p><code>FORMTYPE</code> 为表单类型，该字段决定了表单的 Javascript 初始化方式。</p>
+
+                    <p>&nbsp;</p>
+
+                    <h2><span class="sideline">标准表单 / 表单元素</span></h2>
+                    <div class="doc-sample">
+                        <form action="" method="GET" form="testform">
+                            <dl class="form-success">
+                                <h2>标题，可为 H2~H6，这是 H2</h2>
+                                <p>P标签 Elit laboris officia minim duis ullamco adipisicing aute ipsum est eiusmod officia elit irure esse.</p>
+                            </dl>
+                            <dl class="form-warning">
+                                <h4>标题，这是 H4</h4>
+                                <dd>内容，也可为 DD  Aliqua voluptate consequat pariatur labore velit nisi anim. Exercitation enim excepteur mollit tempor duis elit esse ullamco Lorem duis nulla. Ullamco magna aliquip adipisicing consectetur aute eiusmod cupidatat magna. Anim ad mollit eu aliqua duis ut. Reprehenderit ut aliquip exercitation aliqua fugiat sit sint officia voluptate Lorem. Ipsum tempor sunt nisi laboris ex enim eu consequat et proident. Ex aute non ex enim reprehenderit nulla occaecat tempor ipsum consequat cillum mollit eiusmod.</dd>
+                            </dl>
+                            <dl class="form-error">
+                                <dt>标题，也可为 DT</dt>
+                                <dd>表单默认最大宽度为 720px</dd>
+                            </dl>
+                            <div class="form-items">
+                                <p><strong>标签</strong></p>
+                                <label class="form-item">
+                                    <dt>无</dt>
+                                    <dd>
+                                        <input type="text" required />
+                                    </dd>
+                                </label>
+                                <label class="form-item">
+                                    <dt>标准</dt>
+                                    <dd>
+                                        <input type="text" placeholder="placeholder属性" required />
+                                    </dd>
+                                </label>
+                                <label class="form-item">
+                                    <dt>浮动</dt>
+                                    <dd>
+                                        <input type="text" required />
+                                        <span class="float">.float</span>
+                                    </dd>
+                                </label>
+                                <p><strong>提示</strong></p>
+                                <label class="form-item">
+                                    <dt>标准</dt>
+                                    <dd>
+                                        <input type="text" placeholder="placeholder属性" required />
+                                        <span class="input-hint">提示文本</span>
+                                    </dd>
+                                </label>
+                                <p><strong>状态</strong></p>
+                                <label class="form-item">
+                                    <dt>只读</dt>
+                                    <dd>
+                                        <input type="text" value="只读，内容可选择" required readonly />
+                                        <span class="input-hint">提示文本</span>
+                                    </dd>
+                                </label>
+                                <label class="form-item">
+                                    <dt>禁用</dt>
+                                    <dd>
+                                        <input type="text" value="禁用，内容不可选择" required disabled />
+                                        <span class="input-hint">提示文本</span>
+                                    </dd>
+                                </label>
+                                <label class="form-item error">
+                                    <dt>错误</dt>
+                                    <dd>
+                                        <input type="text" value="已输入内容" required />
+                                        <span class="float">浮动标签</span>
+                                        <span class="input-hint">提示文本</span>
+                                    </dd>
+                                </label>
+                                <p><strong>录入框</strong></p>
+                                <label class="form-item">
+                                    <dt>文本</dt>
+                                    <dd>
+                                        <input type="text"></input>
+                                    </dd>
+                                </label>
+                                <label class="form-item">
+                                    <dt>密码</dt>
+                                    <dd>
+                                        <input type="password"></input>
+                                    </dd>
+                                </label>
+                                <label class="form-item">
+                                    <dt>数字</dt>
+                                    <dd>
+                                        <input type="number"></input>
+                                        <span class="float">可使用 ↑ / ↓ </span>
+                                    </dd>
+                                </label>
+                                <label class="form-item">
+                                    <dt>文件</dt>
+                                    <dd>
+                                        <input type="file"></input>
+                                    </dd>
+                                </label>
+                                <label class="form-item">
+                                    <dt>长文本框</dt>
+                                    <dd>
+                                        <textarea name="" required></textarea>
+                                    </dd>
+                                </label>
+                                <p><strong>选项</strong></p>
+                                <dl class="form-item">
+                                    <dt>单选项<br/><small>如需要，需手动换行</small></dt>
+                                    <dd>
+                                        <label>
+                                            <input type="radio" name="threadlevel" value="0"/>
+                                            <span class="label"></span>
+                                        </label>
+                                        <br/>
+                                        <label>
+                                            <input type="radio" name="threadlevel" value="1"/>
+                                            <span class="label">只接收包括本圈子所有标签的帖子</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="threadlevel" value="2"/>
+                                            <span class="label">接收带本圈子任意标签的帖子</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="threadlevel" value="3"/>
+                                            <span class="label">不接收外来投稿</span>
+                                        </label>
+                                    </dd>
+                                </dl>
+                                <dl class="form-item">
+                                    <dt>单选标签</dt>
+                                    <dd>
+                                        <label>
+                                            <input type="radio" name="platform2" value="Android" class="tab"/>
+                                            <span class="label">Android</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="platform2" value="iOS" class="tab"/>
+                                            <span class="label">iOS</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="platform2" value="WindowsPhone" class="tab"/>
+                                            <span class="label">Windows Phone</span>
+                                        </label>
+                                    </dd>
+                                </dl>
+                                <dl class="form-item">
+                                    <dt>多选勾选<br/><small>如需要，需手动换行</small></dt>
+                                    <dd>
+                                        <label>
+                                            <input type="checkbox" name="method1" value="manual"/>
+                                            <span class="label"></span>
+                                        </label>
+                                        <br/>
+                                        <label>
+                                            <input type="checkbox" name="method1" value="manual"/>
+                                            <span class="label">手动添加</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="method2" value="search" checked/>
+                                            <span class="label">搜索应用 (默认勾选)</span>
+                                        </label>
+                                    </dd>
+                                </dl>
+                                <dl class="form-item">
+                                    <dt>多选标签</dt>
+                                    <dd>
+                                        <label>
+                                            <input type="checkbox" name="method3" value="manual" class="tab"/>
+                                            <span class="label">手动添加</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="method4" value="search" class="tab" checked/>
+                                            <span class="label">搜索应用 (默认选择)</span>
+                                        </label>
+                                    </dd>
+                                </dl>
+                                <dl class="form-item">
+                                    <dt>开关<br/><small>如需要，需手动换行</small></dt>
+                                    <dd>
+                                        <label>
+                                            <input type="checkbox" name="method5" value="checkbox-switch-1" class="switch"/>
+                                            <span class="label"></span>
+                                        </label>
+                                        <br/>
+                                        <label>
+                                            <input type="checkbox" name="method5" value="checkbox-switch-1" class="switch"/>
+                                            <span class="label">手动添加</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="method6" value="checkbox-switch-2" class="switch" checked/>
+                                            <span class="label">搜索应用 (默认开)</span>
+                                        </label>
+                                    </dd>
+                                </dl>
+                                <p><strong>组/特殊用途</strong></p>
+                                <label class="form-item">
+                                    <dt>按钮紧随</dt>
+                                    <dd>
+                                        <div class="form-group">
+                                            <input type="text">
+                                            <span class="float">INPUT #1</span>
+                                            <input type="text" placeholder="INPUT #2">
+                                            <select>
+                                                <option value="1">OPTION #1</option>
+                                            </select>
+                                            <button type="button" class="button">按钮</button>
+                                        </div>
+                                    </dd>
+                                </label>
+                                <label class="form-item">
+                                    <dt>编辑标签</dt>
+                                    <dd>
+                                        <div class="taglist">
+                                            <span class="tag is-editable" tag-id="1">测试TAG #1<s>×</s></span>
+                                            <span class="tag" tag-id="2">测试TAG #2 (不可编辑版)<s>×</s></span>
+                                            <input type="text" autocomplete="off" prpr-autocomplete="tag" prpr-autocomplete-api="../json-sample/autocomplete-tag.json" />
+                                            <input name="tags" type="hidden" />
+                                        </div>
+                                    </dd>
+                                </label>
+                                <p><strong>动作区</strong></p>
+                                <dl class="form-item">
+                                    <dt></dt>
+                                    <dd>
+                                        <dl class="form-actions">
+                                            <input type="submit" class="button button-primary button-large" value="提交" />
+                                            <a href="javascript:;" class="link-cancel" button="cancel">取消并返回</a>
+                                            <button type="button" class="link link-cancel" button="cancel">取消</button>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <dl class="form-actions">
+                                <input type="submit" class="button button-primary button-large" value="提交" />
+                                <a href="javascript:;" class="link-cancel" button="cancel">取消并返回</a>
+                                <button type="button" class="link link-cancel" button="cancel">取消</button>
+                            </dl>
+                        </form>
+                    </div>
+
+                    <p>&nbsp;</p>
+
+                    <h2><span class="sideline">大尺寸表单</span></h2>
+                    <div class="doc-sample">
+                        <form class="form-full" action="" method="GET" form="testform">
+                            <dl class="form-error">错误信息</dl>                            
+                            <div class="form-items">
+                                <label class="form-item">
+                                    <dt>标准</dt>
+                                    <dd>
+                                        <input type="text" name="" placeholder="默认提示文本" required />
+                                    </dd>
+                                </label>
+                                <label class="form-item">
+                                    <dt>不可编辑型</dt>
+                                    <dd>
+                                        <input type="text" name="" value="该文本框不可编辑" required readonly />
+                                    </dd>
+                                </label>
+                                <label class="form-item">
+                                    <dt>上传文件</dt>
+                                    <dd>
+                                        <input type="file" name="" required></input>
+                                    </dd>
+                                </label>
+                                <label class="form-item">
+                                    <dt>长文本框</dt>
+                                    <dd>
+                                        <textarea name="" required></textarea>
+                                    </dd>
+                                </label>
+                            </div>
+                            <dl class="form-actions">
+                                <input type="submit" class="button button-primary button-large" value="提交" />
+                                <a href="javascript:;" class="link-cancel" button="cancel">取消并返回</a>
+                                <button type="button" class="link link-cancel" button="cancel">取消</button>
+                            </dl>
+                        </form>
+                    </div>
+
+                    <p>&nbsp;</p>
+
+                    <h2><span class="sideline">编辑器</span></h2>
+                    <p>为 <code>TEXTAREA</code> 添加 <code>trumbowyg</code> 属性即可</p>
+                    <div class="doc-sample">
+                        <form action="" method="GET" form="testform">
+                            <div class="form-items">
+                                <div class="form-item">
+                                    <dt>编辑器</dt>
+                                    <dd>
+                                        <textarea trumbowyg></textarea>
+                                    </dd>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="col-aside">
+                    <div id="doc-front-end-toc" class="sticky">
+                        <h3>目录</h3>
+                        <ul id="doc-front-end-toc-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- #main -->
+
+    <div id="footer">
+        <div class="layout-wrapper">
+            &copy; 2016 PrPrACG
+        </div>
+    </div> <!-- #footer -->
+
+</div> <!-- #layout -->
+
+<script type="text/javascript" src="../../dist/v2/js/page-docs-front-end.js?20160423"></script>
+<link rel="stylesheet" type="text/css" href="../../dist/v2/css/page-docs-front-end.css">
+
+</body>
+
+</html>

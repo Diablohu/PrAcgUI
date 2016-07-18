@@ -1,0 +1,27 @@
+.page-series .button {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bottom-text {
+    width: 100%;
+    position: absolute;
+    padding: 0 10px;
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-text p {
+    line-height: 1.1em;
+    margin: 0;
+}
+
+.bottom-text b, .bottom-text span {
+    font-size: 12px;
+}
+
+.bottom-text .time {
+    float: right;
+    line-height: 30px;
+}

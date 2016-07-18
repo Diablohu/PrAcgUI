@@ -1,0 +1,24 @@
+.page-register #eula {
+    margin: .5em auto 2.5em;
+    margin: .5rem auto 2.5rem;
+    border: 1px solid #d9d9d9;
+    padding: 1em 1em .75em;
+    padding: 1rem 1rem .75rem;
+    background: #fff;
+    font-size: .875em;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    max-height: 35%;
+    max-height: 35vh;
+    height: 320px;
+    overflow: auto;
+    display: none;
+    -webkit-animation: fadeIn .2s ease-out;
+            animation: fadeIn .2s ease-out;
+    -webkit-transition: height .1s ease-out;
+            transition: height .1s ease-out;
+}
+
+.page-register #eula.show {
+    display: block;
+}
